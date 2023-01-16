@@ -20,6 +20,31 @@ burger.addEventListener("click", () => {
         : planetMenu.classList.remove("hovered");
 });
 
-const openNav = () => {
-    burger.classList.toggle("active");
-};
+// ? Planet menu
+const overview = document.querySelector(".planet-menu__overview");
+const structure = document.querySelector("planet-menu__structure");
+const surface = document.querySelector(".planet-menu__surface");
+
+overview.addEventListener("click", () => {
+    overview.classList.contains("hovered")
+        ? overview.classList.remove("hovered")
+        : overview.classList.add("hovered") &&
+          structure.classList.remove("hovered") &&
+          surface.classList.remove("hovered");
+});
+structure.addEventListener("click", () => {
+    structure.classList.contains("hovered")
+        ? structure.classList.remove("hovered")
+        : structure.classList.add("hovered") &&
+          overview.classList.remove("hovered") &&
+          surface.classList.remove("hovered");
+});
+surface.addEventListener("click", () => {
+    surface.classList.contains("hovered")
+        ? surface.classList.remove("hovered")
+        : surface.classList.add("hovered") &&
+          structure.classList.remove("hovered") &&
+          overview.classList.remove("hovered");
+});
+
+console.log(surface);

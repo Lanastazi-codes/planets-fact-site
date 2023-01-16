@@ -146,9 +146,26 @@ a {
 #burger.active .burger__dash {
     background-color: var(--ligth-grey);
 }
+/* ! */
 .overview-content.hovered,
+.structure-content.hovered,
+.surface-content.hovered,
 .planet-menu.hovered {
     display: none;
+}
+
+
+
+.overview-content{
+    display: none;
+}
+
+.structure-content{
+    display: none;
+}
+
+.surface-content{
+    /* display: none; */
 }
 
 .nav__list {
@@ -219,7 +236,6 @@ a {
 }
 
 /* ? Planet Menu */
-
 .planet-menu {
 }
 .planet-menu__list {
@@ -239,8 +255,24 @@ a {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.5);
     position: relative;
+    cursor: pointer;
     /* border-bottom: 4px solid #419EBB; */
 }
+
+/* default */
+
+.planet-menu__overview{
+    color: var(--white);
+}
+
+.planet-menu__overview .planet-menu__item-dash{
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: #419ebb;
+    bottom: 0;
+}
+
 
 .planet-menu__item-dash.active {
     position: absolute;
@@ -253,6 +285,7 @@ a {
 .planet-menu__pic {
     text-align: center;
     padding: 5.9375rem 0 6.125rem;
+    position: relative;
 }
 
 .planet-menu__pic svg {
@@ -260,6 +293,19 @@ a {
     width: 111px;
     height: 111px;
 }
+
+/* ! */
+.planet-menu__pic::before{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background: url('./assets/geology-mercury.png') no-repeat center;
+    background-size: contain;
+    bottom: 20%;
+    left: 45%;
+}
+
 
 .content__text {
     margin: 1rem 0 2rem;
@@ -274,6 +320,13 @@ a {
     line-height: 1.5625rem;
     margin-bottom: 28px;
 }
+
+.source .source__svg {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+
 /* ! opacity */
 .content__text,
 .source,
@@ -281,9 +334,7 @@ a {
     opacity: 0.6;
 }
 
-.source__svg {
-    display: inline-block;
-}
+
 
 .source__link {
     text-decoration: underline;
