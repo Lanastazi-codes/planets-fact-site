@@ -242,21 +242,6 @@ a {
     /* border-bottom: 4px solid #419EBB; */
 }
 
-/* default */
-
-.planet-menu__overview{
-    color: var(--white);
-}
-
-.planet-menu__overview .planet-menu__item-dash{
-    position: absolute;
-    height: 4px;
-    width: 100%;
-    background-color: #419ebb;
-    bottom: 0;
-}
-
-
 .planet-menu__item-dash.active {
     position: absolute;
     height: 4px;
