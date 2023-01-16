@@ -1,0 +1,343 @@
+:root {
+    --spartan-font: "League Spartan", sans-serif;
+    --antonio-font: "Antonio", sans-serif;
+    --white: #fff;
+    --bg-color: #070724;
+    --dark-grey: #38384f;
+    --ligth-grey: #8383918a;
+    --mercury: #419ebb;
+    --venus: #eda249;
+    --earth: #6f2ed6;
+    --mars: #d14c32;
+    --jupiter: #d83a34;
+    --saturn: #cd5120;
+    --uranus: #1ec2a4;
+    --neptune: #2d68f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    background: var(--bg-color);
+    color: var(--white);
+    font-family: var(--spartan-font);
+    font-weight: 400;
+    text-align: center;
+    /* font-size: 0.875rem;
+    line-height: 1.5625rem; */
+    font-size: 0.6875rem;
+    line-height: 1.375rem;
+    position: relative;
+}
+
+/* hode scrollbar */
+body::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#bg {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    padding: 0 1.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    font-family: var(--antonio-font);
+    text-transform: uppercase;
+    font-weight: 400;
+    /* font-size: 5rem;
+    line-height: 6.4375rem; */
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+}
+
+h2 {
+    font-family: var(--antonio-font);
+    /* font-size: 2.5rem;
+    line-height: 3.25rem;
+    letter-spacing: -0.0938rem; */
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.0656rem;
+}
+
+h3 {
+    font-family: var(--spartan-font);
+    font-size: 0.75rem;
+    line-height: 1.5625rem;
+    letter-spacing: 0.1625rem;
+}
+
+h4 {
+    font-family: var(--spartan-font);
+    font-size: 0.6875rem;
+    line-height: 1.5625rem;
+    letter-spacing: 0.0625rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.btn {
+    border: 1px solid var(--ligth-grey);
+}
+.btn:active {
+    background-color: var();
+}
+.btn:hover {
+    background-color: var(--dark-grey);
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    cursor: pointer;
+}
+
+.burger__dash {
+    height: 0.1875rem;
+    width: 1.5rem;
+    background-color: var(--white);
+}
+
+.menu__static {
+    position: relative;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--ligth-grey);
+}
+
+#nav {
+    display: none;
+}
+
+#nav.active {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    overflow-y: initial;
+}
+
+#burger.active .burger__dash {
+    background-color: var(--ligth-grey);
+}
+.overview-content.hovered,
+.planet-menu.hovered {
+    display: none;
+}
+
+.nav__list {
+    padding: 1.375rem 1.5rem 0;
+    width: 100vw;
+}
+
+.link__wrapper {
+    display: flex;
+}
+
+.nav__link {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--ligth-grey);
+}
+
+.link__planet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 1.5625rem;
+    line-height: 1.5625rem;
+}
+
+.link__mercury {
+    background-color: #def4fc;
+}
+
+.link__venus {
+    background-color: var(--venus);
+}
+.link__earth {
+    background-color: #545bfe;
+}
+.link__mars {
+    background-color: #ff6a45;
+}
+.link__jupiter {
+    background-color: #ecad7a;
+}
+.link__saturn {
+    background-color: #fccb6b;
+}
+.link__uranus {
+    background-color: var(--uranus);
+}
+.link__neptune {
+    background-color: var(--neptune);
+}
+
+.link__arrow {
+    border: solid var(--ligth-grey);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.link__name {
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    letter-spacing: 0.0852rem;
+    line-height: 1.5625rem;
+}
+
+/* ? Planet Menu */
+
+.planet-menu {
+}
+.planet-menu__list {
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--ligth-grey);
+}
+.planet-menu__item {
+    padding: 1.25rem 0;
+    font-family: var(--spartan-font);
+    font-weight: 700;
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    letter-spacing: 0.1205rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    /* border-bottom: 4px solid #419EBB; */
+}
+
+/* default */
+
+.planet-menu__overview{
+    color: var(--white);
+}
+
+.planet-menu__overview .planet-menu__item-dash{
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: #419ebb;
+    bottom: 0;
+}
+
+
+.planet-menu__item-dash.active {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: #419ebb;
+    bottom: 0;
+}
+
+.planet-menu__pic {
+    text-align: center;
+    padding: 5.9375rem 0 6.125rem;
+}
+
+.planet-menu__pic svg {
+    display: inline-block;
+    width: 111px;
+    height: 111px;
+}
+
+.content__text {
+    margin: 1rem 0 2rem;
+}
+
+.source {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    line-height: 1.5625rem;
+    margin-bottom: 28px;
+}
+/* ! opacity */
+.content__text,
+.source,
+.box__name {
+    opacity: 0.6;
+}
+
+.source__svg {
+    display: inline-block;
+}
+
+.source__link {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.planet-menu__overview {
+}
+.planet-menu__structure {
+}
+.planet-menu__surface {
+}
+
+/* ? Planet info */
+
+.planet-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 50px;
+}
+.planet-info__box {
+    border: 1px solid var(--ligth-grey);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box__name {
+    font-weight: 700;
+    font-size: 0.5625rem;
+    line-height: 1rem;
+    letter-spacing: 0.0455rem;
+    text-transform: uppercase;
+}
+.box__value {
+    font-family: var(--antonio-font);
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    letter-spacing: -0.0469rem;
+    text-transform: uppercase;
+}
