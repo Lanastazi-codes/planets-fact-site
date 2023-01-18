@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <style>
+    .planet-menu__surface-pic::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background: url("./assets/geology-jupiter.png") no-repeat center;
+    background-size: contain;
+    bottom: 20%;
+    left: 45%;
+}
+    .planet-menu__item-dash.active {
+    background-color: var(--jupiter);
+}
+  </style>
+  <title>Frontend Mentor | Planets fact site</title>
+</head>
+<body>
+      <!--? SVG background -->
+            <svg
+                id="bg"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1532"
+                height="1291"
+            >
+                <g fill="#FFF" fill-rule="evenodd" opacity=".202">
+                    <circle cx="1155.5" cy="369.5" r="3.5" />
+                    <circle cx="1145.5" cy="372.5" r="1.5" />
+                    <circle cx="1167.5" cy="329.5" r="1.5" />
+                    <circle cx="1148.5" cy="298.5" r="1.5" />
+                    <circle cx="1225.5" cy="169.5" r="1.5" />
+                    <circle cx="1222" cy="174" r="2" />
+                    <circle cx="1199.5" cy="156.5" r="1.5" />
+                    <circle cx="1192.5" cy="210.5" r="1.5" />
+                    <circle cx="1344" cy="192" r="2" />
+                    <circle cx="1336" cy="332" r="2" />
+                    <circle cx="1362.5" cy="350.5" r="1.5" />
+                    <circle cx="1164.5" cy="57.5" r="2.5" />
+                    <circle cx="1237.5" cy="64.5" r="1.5" />
+                    <circle cx="1164.5" cy="35.5" r="1.5" />
+                    <circle cx="1016.5" cy="76.5" r="1.5" />
+                    <circle cx="1017" cy="32" r="2" />
+                    <circle cx="966.5" cy="8.5" r="3.5" />
+                    <circle cx="957.5" cy="54.5" r="2.5" />
+                    <circle cx="860.5" cy="58.5" r="3.5" />
+                    <circle cx="921" cy="34" r="2" />
+                    <circle cx="965" cy="229" r="2" />
+                    <circle cx="934" cy="269" r="2" />
+                    <circle cx="885.5" cy="287.5" r="1.5" />
+                    <circle cx="874.5" cy="302.5" r="1.5" />
+                    <circle cx="963" cy="410" r="4" />
+                    <circle cx="852" cy="372" r="2" />
+                    <circle cx="805" cy="331" r="2" />
+                    <circle cx="812.5" cy="256.5" r="1" />
+                    <circle cx="766.5" cy="281.5" r="1.5" />
+                    <circle cx="1510" cy="17" r="2" />
+                    <circle cx="1516.5" cy="20.5" r="2.5" />
+                    <circle cx="1457" cy="200" r="2" />
+                    <circle cx="1431.5" cy="75.5" r="1.5" />
+                    <circle cx="1420.5" cy="89.5" r="1.5" />
+                    <circle cx="1357.5" cy="43.5" r="1" />
+                    <circle cx="1310.5" cy="70.5" r="1.5" />
+                    <circle cx="805.5" cy="474.5" r="2.5" />
+                    <circle cx="1490" cy="409" r="2" />
+                    <circle cx="1508.5" cy="356.5" r="1.5" />
+                    <circle cx="1072.5" cy="334.5" r="1.5" />
+                    <circle cx="1109" cy="417" r="2" />
+                    <circle cx="1207" cy="446" r="2" />
+                    <circle cx="1266" cy="431" r="2" />
+                    <circle cx="1234.5" cy="523.5" r="2.5" />
+                    <circle cx="1274" cy="505" r="2" />
+                    <circle cx="1403.5" cy="481.5" r="1.5" />
+                    <circle cx="1417" cy="525" r="2" />
+                    <circle cx="1251" cy="562" r="2" />
+                    <circle cx="1326" cy="578" r="2" />
+                    <circle cx="1417.5" cy="661.5" r="2.5" />
+                    <circle cx="1396" cy="696" r="2" />
+                    <circle cx="1427.5" cy="677.5" r="1.5" />
+                    <circle cx="1258.5" cy="643.5" r="1.5" />
+                    <circle cx="1343.5" cy="758.5" r="2.5" />
+                    <circle cx="1498" cy="673" r="2" />
+                    <circle cx="1529.5" cy="633.5" r="2.5" />
+                    <circle cx="1440.5" cy="575.5" r="1" />
+                    <circle cx="1306.5" cy="918.5" r="1.5" />
+                    <circle cx="1499" cy="911" r="2" />
+                    <circle cx="1467.5" cy="923.5" r="1.5" />
+                    <circle cx="1497" cy="1029" r="2" />
+                    <circle cx="1432.5" cy="1044.5" r="1.5" />
+                    <circle cx="824" cy="34" r="2" />
+                    <circle cx="602" cy="140" r="2" />
+                    <circle cx="640.5" cy="314.5" r="1.5" />
+                    <circle cx="606" cy="365" r="2" />
+                    <circle cx="466" cy="8" r="2" />
+                    <circle cx="576" cy="8" r="2" />
+                    <circle cx="552.5" cy="17.5" r="3.5" />
+                    <circle cx="464" cy="61" r="2" />
+                    <circle cx="218" cy="78" r="2" />
+                    <circle cx="419.5" cy="17.5" r="1.5" />
+                    <circle cx="461.5" cy="288.5" r="3.5" />
+                    <circle cx="440.5" cy="279.5" r="1.5" />
+                    <circle cx="386" cy="332" r="2" />
+                    <circle cx="404" cy="342" r="2" />
+                    <circle cx="378" cy="270" r="2" />
+                    <circle cx="362" cy="365" r="2" />
+                    <circle cx="373.5" cy="433.5" r="3.5" />
+                    <circle cx="511.5" cy="464.5" r="1.5" />
+                    <circle cx="627.5" cy="474.5" r="1.5" />
+                    <circle cx="644" cy="492" r="2" />
+                    <circle cx="117.5" cy="199.5" r="1.5" />
+                    <circle cx="118" cy="207" r="2" />
+                    <circle cx="89.5" cy="9.5" r="2.5" />
+                    <circle cx="110.5" cy="23.5" r="2.5" />
+                    <circle cx="196.5" cy=".5" r="1" />
+                    <circle cx="274" cy="12" r="2" />
+                    <circle cx="283" cy="60" r="2" />
+                    <circle cx="63.5" cy="127.5" r="2.5" />
+                    <circle cx="24" cy="60" r="2" />
+                    <circle cx="65.5" cy="35.5" r="1" />
+                    <circle cx="28" cy="163" r="2" />
+                    <circle cx="22.5" cy="204.5" r="2.5" />
+                    <circle cx="99" cy="268" r="4" />
+                    <circle cx="50.5" cy="228.5" r="1" />
+                    <circle cx="37.5" cy="257.5" r="1.5" />
+                    <circle cx="85" cy="291" r="2" />
+                    <circle cx="11.5" cy="47.5" r="1" />
+                    <circle cx="138" cy="426" r="4" />
+                    <circle cx="262.5" cy="486.5" r="3.5" />
+                    <circle cx="269.5" cy="452.5" r="1.5" />
+                    <circle cx="134.5" cy="547.5" r="2.5" />
+                    <circle cx="3.5" cy="560.5" r="3.5" />
+                    <circle cx="429.5" cy="573.5" r="1.5" />
+                    <circle cx="486" cy="564" r="2" />
+                    <circle cx="511" cy="597" r="2" />
+                    <circle cx="352.5" cy="635.5" r="3.5" />
+                    <circle cx="345" cy="709" r="2" />
+                    <circle cx="256.5" cy="776.5" r="3.5" />
+                    <circle cx="235.5" cy="811.5" r="3.5" />
+                    <circle cx="229.5" cy="664.5" r="1.5" />
+                    <circle cx="233.5" cy="746.5" r="1.5" />
+                    <circle cx="42.5" cy="811.5" r="2.5" />
+                    <circle cx="77.5" cy="980.5" r="2.5" />
+                    <circle cx="255" cy="938" r="2" />
+                    <circle cx="32.5" cy="938.5" r="3.5" />
+                    <circle cx="23.5" cy="1086.5" r="1.5" />
+                    <circle cx="108.5" cy="1238.5" r="3.5" />
+                    <circle cx="159.5" cy="1159.5" r="2.5" />
+                    <circle cx="90.5" cy="1192.5" r="1" />
+                    <circle cx="300.5" cy="1081.5" r="3.5" />
+                    <circle cx="388.5" cy="1154.5" r="3.5" />
+                    <circle cx="343" cy="1124" r="2" />
+                    <circle cx="467.5" cy="1072.5" r="1.5" />
+                    <circle cx="532.5" cy="1146.5" r="2.5" />
+                    <circle cx="555.5" cy="1153.5" r="2.5" />
+                    <circle cx="546.5" cy="1137.5" r="1" />
+                    <circle cx="318" cy="1199" r="4" />
+                    <circle cx="301.5" cy="1186.5" r="1.5" />
+                    <circle cx="408" cy="1230" r="2" />
+                    <circle cx="491.5" cy="1210.5" r="1" />
+                    <circle cx="565.5" cy="1178.5" r="1.5" />
+                    <circle cx="656.5" cy="1235.5" r="3.5" />
+                    <circle cx="709" cy="1285" r="2" />
+                    <circle cx="324.5" cy="1289.5" r="1.5" />
+                    <circle cx="332.5" cy="1278.5" r="1.5" />
+                    <circle cx="819.5" cy="1028.5" r="2.5" />
+                    <circle cx="875" cy="1157" r="2" />
+                    <circle cx="963.5" cy="1152.5" r="2.5" />
+                    <circle cx="962" cy="1145" r="2" />
+                    <circle cx="1069.5" cy="1181.5" r="11.5" />
+                    <circle cx="1003.5" cy="1152.5" r="2.5" />
+                    <circle cx="940.5" cy="1193.5" r="2.5" />
+                    <circle cx="907" cy="1068" r="2" />
+                    <circle cx="945" cy="925" r="2" />
+                    <circle cx="1204" cy="1186" r="2" />
+                    <circle cx="691.5" cy="848.5" r="1.5" />
+                    <circle cx="831" cy="1013" r="2" />
+                    <circle cx="833.5" cy="1082.5" r="2.5" />
+                    <circle cx="833" cy="1190" r="2" />
+                    <circle cx="1155.5" cy="1022.5" r="3.5" />
+                    <circle cx="908" cy="595" r="4" />
+                    <circle cx="1012.5" cy="528.5" r="3.5" />
+                    <circle cx="992.5" cy="547.5" r="1.5" />
+                    <circle cx="577" cy="960" r="2" />
+                    <circle cx="599.5" cy="939.5" r="1.5" />
+                    <circle cx="446" cy="959" r="2" />
+                    <circle cx="868" cy="534" r="2" />
+                    <circle cx="683.5" cy="574.5" r="1.5" />
+                    <circle cx="694.5" cy="526.5" r="1.5" />
+                    <circle cx="462.5" cy="659.5" r="3.5" />
+                    <circle cx="458.5" cy="738.5" r="1.5" />
+                    <circle cx="587" cy="764" r="2" />
+                    <circle cx="602.5" cy="690.5" r="2.5" />
+                    <circle cx="529.5" cy="669.5" r="1.5" />
+                    <circle cx="900.5" cy="851.5" r="3.5" />
+                    <circle cx="926.5" cy="796.5" r="3.5" />
+                    <circle cx="816" cy="823" r="2" />
+                    <circle cx="1003" cy="672" r="2" />
+                </g>
+            </svg>
+            <div class="menu">
+                <div class="menu__static">
+                  <h2>THE PLANETS</h2>
+                  <!-- ? Burger -->
+                  <div id="burger" class="burger">
+                      <div class="burger__dash"></div>
+                      <div class="burger__dash"></div>
+                      <div class="burger__dash"></div>
+                  </div>
+                </div>
+                <!--? Navigation start  -->
+                <nav id="nav" class="nav">
+                  <ul class="nav__list">
+                    <!--mercury  -->
+                    <li class="nav__item">
+                      <a href="index.html" class="nav__link mercury-link">
+                        <div class="link__wrapper">
+                          <div class="link__mercury link__planet"></div>
+                          <div class="link__name">mercury</div>
+                        </div>
+                        <div class="link__arrow"></div>
+                      </a>
+                    </li>
+                    <!--venus  -->
+                    <li class="nav__item">
+                      <a href="venus.html" class="nav__link venus-link">
+                        <div class="link__wrapper">
+                          <div class="link__venus link__planet"></div>
+                          <div class="link__name">venus</div>
+                        </div>
+                        <div class="link__arrow"></div>
+                      </a>
+                    </li>
+                    <!-- earth -->
+                    <li class="nav__item">
+                      <a href="earth.html" class="nav__link earth-link">
+                        <div class="link__wrapper">
+                          <div class="link__earth link__planet"></div>
+                          <div class="link__name">earth</div>
+                        </div>
+                        <div class="link__arrow"></div>
+                      </a>
+                    </li>
+                    <!--mars  -->
+                    <li class="nav__item">
+                      <a href="mars.html" class="nav__link mars-link">
+                        <div class="link__wrapper">
+                          <div class="link__mars link__planet"></div>
+                          <div class="link__name">mars</div>
+                        </div>
+                        <div class="link__arrow"></div>
+                      </a>
+                    </li>
+                    <!-- jupiter -->
+                    <li class="nav__item">
+                      <a href="jupiter.html" class="nav__link jupiter-link">
+                        <div class="link__wrapper">
+                          <div class="link__jupiter link__planet"></div>
+                          <div class="link__name">jupiter</div>
+                        </div>
+                        <div class="link__arrow"></div>
+                      </a>
+                    </li>
+                    <!-- saturn -->
+                    <li class="nav__item">
+                      <a href="saturn.html" class="nav__link saturn-link">
+                        <div class="link__wrapper">
+                          <div class="link__saturn link__planet"></div>
+                          <div class="link__name">saturn</div>
+                        </div>
+                        <div class="link__arrow"></div>
+                      </a>
+                    </li>
+                    <!-- uranus -->
+                    <li class="nav__item">
+                      <a href="uranus.html" class="nav__link uranus-link">
+                        <div class="link__wrapper">
+                          <div class="link__uranus link__planet"></div>
+                          <div class="link__name">uranus</div>
+                        </div>
+                        <div class="link__arrow"></div>
+                      </a>
+                    </li>
+                    <!-- neptune -->
+                    <li class="nav__item">
+                      <a href="neptune.html" class="nav__link neptune-link">
+                        <div class="link__wrapper">
+                          <div class="link__neptune link__planet"></div>
+                          <div class="link__name">neptune</div>
+                        </div>
+                        <div class="link__arrow"></div>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+                <!--? Navigation end  -->
+            </div>
+
+            <!-- ?Planet menu start -->
+            <div class="planet-menu">
+              <ul class="planet-menu__list">
+                <li class="planet-menu__item planet-menu__overview active">
+                  OVERVIEW
+                  <div class="planet-menu__item-dash active"></div>
+                </li>
+                <li class="planet-menu__item planet-menu__structure">
+                  Structure
+                  <div class="planet-menu__item-dash"></div>
+                </li>
+                <li class="planet-menu__item planet-menu__surface">
+                  Surface
+                  <div class="planet-menu__item-dash"></div>
+                </li>
+              </ul>
+              <!-- ?Planet menu end -->
+            
+        <div class="container">
+
+          <!--? Overview Content Start -->
+            <div class="overview-content">
+              <div class="planet-menu__pic">
+                <svg class="jupiter" viewBox="0 0 582 582" width="582" height="582" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="291" cy="291" r="291" fill="#ECAD7A"/><mask id="a" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M38 294c6.627 0 12 5.373 12 12s-5.373 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12H38zm220 0c6.627 0 12 5.373 12 12s-5.373 12-12 12h-78v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h160c6.627 0 12 5.373 12 12s-5.373 12-12 12H83c-6.627 0-12-5.373-12-12s5.373-12 12-12h49c6.627 0 12-5.373 12-12s-5.373-12-12-12h-30c-6.627 0-12-5.373-12-12s5.373-12 12-12h156zM53 390c6.627 0 12 5.373 12 12s-5.373 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm287 0c6.627 0 12 5.373 12 12s-5.373 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm264 12c0-6.627-5.373-12-12-12H426c-6.627 0-12 5.373-12 12s5.373 12 12 12h166c6.627 0 12-5.373 12-12zm-190-84c6.627 0 12 5.373 12 12s-5.373 12-12 12h-9c-6.627 0-12 5.373-12 12s5.373 12 12 12h257c6.627 0 12-5.373 12-12s-5.373-12-12-12H462v-.01c-6.395-.262-11.5-5.53-11.5-11.99s5.105-11.728 11.5-11.99V318h24c6.627 0 12-5.373 12-12s-5.373-12-12-12H330c-6.627 0-12 5.373-12 12s5.373 12 12 12h84zm298-12c0-6.627-5.373-12-12-12H544c-6.627 0-12 5.373-12 12s5.373 12 12 12h156c6.627 0 12-5.373 12-12z" fill="#F0D29F"/></g><mask id="b" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#b)"><path d="M159 402c0-6.627-5.373-12-12-12h-29c-6.627 0-12-5.373-12-12s5.373-12 12-12h101c6.627 0 12 5.373 12 12s-5.373 12-12 12h-3l-.001.01c-6.395.263-11.499 5.53-11.499 11.99s5.104 11.727 11.499 11.99l.001.01h3c6.627 0 12 5.373 12 12s-5.373 12-12 12h-76c-6.627 0-12-5.373-12-12s5.373-12 12-12h4c6.627 0 12-5.373 12-12z" fill="#D86534"/></g><mask id="c" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#c)"><path fill-rule="evenodd" clip-rule="evenodd" d="M466 54c-6.627 0-12 5.373-12 12s5.373 12 12 12h156c6.627 0 12-5.373 12-12s-5.373-12-12-12H466zm-220 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h78v.01c6.395.262 11.5 5.53 11.5 11.99s-5.105 11.728-11.5 11.99v.01H164c-6.627 0-12 5.373-12 12s5.373 12 12 12h257c6.627 0 12-5.373 12-12s-5.373-12-12-12h-49c-6.627 0-12-5.373-12-12s5.373-12 12-12h30c6.627 0 12-5.373 12-12s-5.373-12-12-12H246zm205 96c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zm-287 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zm-264 12c0-6.627 5.373-12 12-12H78c6.627 0 12 5.373 12 12s-5.373 12-12 12H-88c-6.627 0-12-5.373-12-12zM90 78c-6.627 0-12 5.373-12 12s5.373 12 12 12h9c6.627 0 12 5.373 12 12s-5.373 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12H42v-.01c6.395-.262 11.5-5.53 11.5-11.99S48.395 78.272 42 78.01V78H18c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12H90zm-298-12c0-6.627 5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12h-156c-6.627 0-12-5.373-12-12z" fill="#DC8E61"/></g><mask id="d" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#d)"><path fill-rule="evenodd" clip-rule="evenodd" d="M624 438c-6.627 0-12 5.373-12 12s5.373 12 12 12h156c6.627 0 12-5.373 12-12s-5.373-12-12-12H624zm-220 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h78v.01c6.395.262 11.5 5.53 11.5 11.99s-5.105 11.728-11.5 11.99v.01H322c-6.627 0-12 5.373-12 12s5.373 12 12 12h257c6.627 0 12-5.373 12-12s-5.373-12-12-12h-49c-6.627 0-12-5.373-12-12s5.373-12 12-12h30c6.627 0 12-5.373 12-12s-5.373-12-12-12H404zm205 96c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zm-287 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zM58 546c0-6.627 5.373-12 12-12h166c6.627 0 12 5.373 12 12s-5.373 12-12 12H70c-6.627 0-12-5.373-12-12zm190-84c-6.627 0-12 5.373-12 12s5.373 12 12 12h9c6.627 0 12 5.373 12 12s-5.373 12-12 12H0c-6.627 0-12-5.373-12-12s5.373-12 12-12h200v-.01c6.395-.262 11.5-5.53 11.5-11.99s-5.105-11.728-11.5-11.99V462h-24c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12h-84zm-298-12c0-6.627 5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12H-38c-6.627 0-12-5.373-12-12z" fill="#D89D6D"/></g><mask id="e" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#e)"><path fill-rule="evenodd" clip-rule="evenodd" d="M177 222c6.627 0 12 5.373 12 12s-5.373 12-12 12h-10c-6.627 0-12 5.373-12 12s5.373 12 12 12h89c6.627 0 12-5.373 12-12s-5.373-12-12-12h-10l-.001-.01c-6.395-.263-11.499-5.53-11.499-11.99s5.104-11.727 11.499-11.99L246 222h65c6.627 0 12-5.373 12-12s-5.373-12-12-12H112c-6.627 0-12 5.373-12 12s5.373 12 12 12h65zm-46 36c0-6.627-5.373-12-12-12H57c-6.627 0-12 5.373-12 12s5.373 12 12 12h62c6.627 0 12-5.373 12-12zM9 246c6.627 0 12 5.373 12 12s-5.373 12-12 12h-28c-6.627 0-12-5.373-12-12s5.373-12 12-12H9zm475 12c0-6.627-5.373-12-12-12H304c-6.627 0-12 5.373-12 12s5.373 12 12 12h168c6.627 0 12-5.373 12-12zm64-12c6.627 0 12 5.373 12 12s-5.373 12-12 12h-28c-6.627 0-12-5.373-12-12s5.373-12 12-12h28zm-35-36c0-6.627-5.373-12-12-12H359c-6.627 0-12 5.373-12 12s5.373 12 12 12h142c6.627 0 12-5.373 12-12zm86-12c6.627 0 12 5.373 12 12s-5.373 12-12 12h-50c-6.627 0-12-5.373-12-12s5.373-12 12-12h50zM52 210c0-6.627-5.373-12-12-12H12c-6.627 0-12 5.373-12 12s5.373 12 12 12h28c6.627 0 12-5.373 12-12z" fill="#D89D6D"/></g><mask id="f" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#f)"><path opacity=".078" fill="#000" d="M291 0h292v582H291z"/></g></svg>
+              </div>
+              <h1>jupiter</h1>
+              <p class="content__text">
+                Jupiter is the fifth planet from the Sun and the largest in the Solar System. 
+  It is a gas giant with a mass two and a half times that of all the other 
+  planets in the Solar System combined, but less than one-thousandth the mass 
+  of the Sun.
+              </p>
+              <div class="source">
+                <span class="source__text">Source : </span>
+                <a href="https://en.wikipedia.org/wiki/Jupiter" class="source__link"> Wikipedia </a>
+                <svg class="source__svg" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path fill="#FFF" d="M11.34.66C10.9.22 10.37 0 9.75 0h-7.5C1.63 0 1.1.22.66.66.22 1.1 0 1.63 0 2.25v7.5c0 .62.22 1.15.66 1.59.44.44.97.66 1.59.66h7.5c.62 0 1.15-.22 1.59-.66.44-.44.66-.97.66-1.59v-7.5c0-.62-.22-1.15-.66-1.59zM10 6.25a.467.467 0 01-.305.46.544.544 0 01-.195.04.465.465 0 01-.352-.149L8.023 5.476 3.852 9.648a.481.481 0 01-.352.149.48.48 0 01-.352-.149l-.796-.797a.48.48 0 01-.149-.351.48.48 0 01.149-.352l4.172-4.172-1.125-1.125c-.162-.15-.198-.333-.11-.546A.467.467 0 015.75 2H9.5c.135 0 .253.05.352.148A.48.48 0 0110 2.5v3.75z" opacity=".5"/></svg>
+              </div>
+            </div>
+          <!--? Overview Content End -->
+
+          <!--? Internal Structure Content Start -->
+          <div class="structure-content">
+              <div class="planet-menu__pic">
+                <svg id="jupiter-internal" class="jupiter" viewBox="0 0 582 582" width="582" height="582" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="291" cy="291" r="291" fill="#ECAD7A"/><mask id="a" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M38 294c6.627 0 12 5.373 12 12s-5.373 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12H38zm220 0c6.627 0 12 5.373 12 12s-5.373 12-12 12h-78v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h160c6.627 0 12 5.373 12 12s-5.373 12-12 12H83c-6.627 0-12-5.373-12-12s5.373-12 12-12h49c6.627 0 12-5.373 12-12s-5.373-12-12-12h-30c-6.627 0-12-5.373-12-12s5.373-12 12-12h156zM53 390c6.627 0 12 5.373 12 12s-5.373 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm287 0c6.627 0 12 5.373 12 12s-5.373 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm264 12c0-6.627-5.373-12-12-12H426c-6.627 0-12 5.373-12 12s5.373 12 12 12h166c6.627 0 12-5.373 12-12zm-190-84c6.627 0 12 5.373 12 12s-5.373 12-12 12h-9c-6.627 0-12 5.373-12 12s5.373 12 12 12h257c6.627 0 12-5.373 12-12s-5.373-12-12-12H462v-.01c-6.395-.262-11.5-5.53-11.5-11.99s5.105-11.728 11.5-11.99V318h24c6.627 0 12-5.373 12-12s-5.373-12-12-12H330c-6.627 0-12 5.373-12 12s5.373 12 12 12h84zm298-12c0-6.627-5.373-12-12-12H544c-6.627 0-12 5.373-12 12s5.373 12 12 12h156c6.627 0 12-5.373 12-12z" fill="#F0D29F"/></g><mask id="b" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#b)"><path d="M159 402c0-6.627-5.373-12-12-12h-29c-6.627 0-12-5.373-12-12s5.373-12 12-12h101c6.627 0 12 5.373 12 12s-5.373 12-12 12h-3l-.001.01c-6.395.263-11.499 5.53-11.499 11.99s5.104 11.727 11.499 11.99l.001.01h3c6.627 0 12 5.373 12 12s-5.373 12-12 12h-76c-6.627 0-12-5.373-12-12s5.373-12 12-12h4c6.627 0 12-5.373 12-12z" fill="#D86534"/></g><mask id="c" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#c)"><path fill-rule="evenodd" clip-rule="evenodd" d="M466 54c-6.627 0-12 5.373-12 12s5.373 12 12 12h156c6.627 0 12-5.373 12-12s-5.373-12-12-12H466zm-220 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h78v.01c6.395.262 11.5 5.53 11.5 11.99s-5.105 11.728-11.5 11.99v.01H164c-6.627 0-12 5.373-12 12s5.373 12 12 12h257c6.627 0 12-5.373 12-12s-5.373-12-12-12h-49c-6.627 0-12-5.373-12-12s5.373-12 12-12h30c6.627 0 12-5.373 12-12s-5.373-12-12-12H246zm205 96c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zm-287 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zm-264 12c0-6.627 5.373-12 12-12H78c6.627 0 12 5.373 12 12s-5.373 12-12 12H-88c-6.627 0-12-5.373-12-12zM90 78c-6.627 0-12 5.373-12 12s5.373 12 12 12h9c6.627 0 12 5.373 12 12s-5.373 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12H42v-.01c6.395-.262 11.5-5.53 11.5-11.99S48.395 78.272 42 78.01V78H18c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12H90zm-298-12c0-6.627 5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12h-156c-6.627 0-12-5.373-12-12z" fill="#DC8E61"/></g><mask id="d" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#d)"><path fill-rule="evenodd" clip-rule="evenodd" d="M624 438c-6.627 0-12 5.373-12 12s5.373 12 12 12h156c6.627 0 12-5.373 12-12s-5.373-12-12-12H624zm-220 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h78v.01c6.395.262 11.5 5.53 11.5 11.99s-5.105 11.728-11.5 11.99v.01H322c-6.627 0-12 5.373-12 12s5.373 12 12 12h257c6.627 0 12-5.373 12-12s-5.373-12-12-12h-49c-6.627 0-12-5.373-12-12s5.373-12 12-12h30c6.627 0 12-5.373 12-12s-5.373-12-12-12H404zm205 96c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zm-287 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zM58 546c0-6.627 5.373-12 12-12h166c6.627 0 12 5.373 12 12s-5.373 12-12 12H70c-6.627 0-12-5.373-12-12zm190-84c-6.627 0-12 5.373-12 12s5.373 12 12 12h9c6.627 0 12 5.373 12 12s-5.373 12-12 12H0c-6.627 0-12-5.373-12-12s5.373-12 12-12h200v-.01c6.395-.262 11.5-5.53 11.5-11.99s-5.105-11.728-11.5-11.99V462h-24c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12h-84zm-298-12c0-6.627 5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12H-38c-6.627 0-12-5.373-12-12z" fill="#D89D6D"/></g><mask id="e" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#e)"><path fill-rule="evenodd" clip-rule="evenodd" d="M177 222c6.627 0 12 5.373 12 12s-5.373 12-12 12h-10c-6.627 0-12 5.373-12 12s5.373 12 12 12h89c6.627 0 12-5.373 12-12s-5.373-12-12-12h-10l-.001-.01c-6.395-.263-11.499-5.53-11.499-11.99s5.104-11.727 11.499-11.99L246 222h65c6.627 0 12-5.373 12-12s-5.373-12-12-12H112c-6.627 0-12 5.373-12 12s5.373 12 12 12h65zm-46 36c0-6.627-5.373-12-12-12H57c-6.627 0-12 5.373-12 12s5.373 12 12 12h62c6.627 0 12-5.373 12-12zM9 246c6.627 0 12 5.373 12 12s-5.373 12-12 12h-28c-6.627 0-12-5.373-12-12s5.373-12 12-12H9zm475 12c0-6.627-5.373-12-12-12H304c-6.627 0-12 5.373-12 12s5.373 12 12 12h168c6.627 0 12-5.373 12-12zm64-12c6.627 0 12 5.373 12 12s-5.373 12-12 12h-28c-6.627 0-12-5.373-12-12s5.373-12 12-12h28zm-35-36c0-6.627-5.373-12-12-12H359c-6.627 0-12 5.373-12 12s5.373 12 12 12h142c6.627 0 12-5.373 12-12zm86-12c6.627 0 12 5.373 12 12s-5.373 12-12 12h-50c-6.627 0-12-5.373-12-12s5.373-12 12-12h50zM52 210c0-6.627-5.373-12-12-12H12c-6.627 0-12 5.373-12 12s5.373 12 12 12h28c6.627 0 12-5.373 12-12z" fill="#D89D6D"/></g><mask id="f" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#f)"><path opacity=".078" fill="#000" d="M291 0h292v582H291z"/></g><path fill-rule="evenodd" clip-rule="evenodd" d="M291 577c157.953 0 286-128.047 286-286S448.953 5 291 5v572z" fill="#A15C3E"/><mask id="g" maskUnits="userSpaceOnUse" x="291" y="5" width="286" height="572"><path fill-rule="evenodd" clip-rule="evenodd" d="M291 577c157.953 0 286-128.047 286-286S448.953 5 291 5v572z" fill="#fff"/></mask><g mask="url(#g)"><circle cx="291.5" cy="291.5" r="269.5" fill="#F0D29F"/><circle cx="292.5" cy="291.5" r="212.5" fill="#E2BE81"/><circle cx="292.5" cy="291.5" r="187.5" fill="#D27140"/><circle cx="291" cy="291" r="42" fill="#565658"/></g><path fill-rule="evenodd" clip-rule="evenodd" d="M118 366c-6.627 0-12 5.373-12 12s5.373 12 12 12h101c6.627 0 12-5.373 12-12s-5.373-12-12-12H118zm25 48c-6.627 0-12 5.373-12 12s5.373 12 12 12h76c6.627 0 12-5.373 12-12s-5.373-12-12-12h-76z" fill="#D86534"/></svg>
+              </div>
+              <h1>jupiter</h1>
+              <p class="content__text">
+                When the Juno arrived in 2016, it found that Jupiter has a very diffuse core 
+  that mixes into its mantle. A possible cause is an impact from a planet of 
+  about ten Earth masses a few million years after Jupiter's formation, which 
+  would have disrupted an originally solid Jovian core.
+              </p>
+              <div class="source">
+                <span class="source__text">Source : </span>
+                <a href="https://en.wikipedia.org/wiki/Jupiter#Internal_structure" class="source__link"> Wikipedia </a>
+                <svg class="source__svg" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path fill="#FFF" d="M11.34.66C10.9.22 10.37 0 9.75 0h-7.5C1.63 0 1.1.22.66.66.22 1.1 0 1.63 0 2.25v7.5c0 .62.22 1.15.66 1.59.44.44.97.66 1.59.66h7.5c.62 0 1.15-.22 1.59-.66.44-.44.66-.97.66-1.59v-7.5c0-.62-.22-1.15-.66-1.59zM10 6.25a.467.467 0 01-.305.46.544.544 0 01-.195.04.465.465 0 01-.352-.149L8.023 5.476 3.852 9.648a.481.481 0 01-.352.149.48.48 0 01-.352-.149l-.796-.797a.48.48 0 01-.149-.351.48.48 0 01.149-.352l4.172-4.172-1.125-1.125c-.162-.15-.198-.333-.11-.546A.467.467 0 015.75 2H9.5c.135 0 .253.05.352.148A.48.48 0 0110 2.5v3.75z" opacity=".5"/></svg>
+              </div>
+          </div>
+          <!--? Internal Structure Content End -->
+
+          <!--? Surface Geology Content Start -->
+          <div class="surface-content">
+              <div class="planet-menu__pic planet-menu__surface-pic">
+                <svg class="jupiter" viewBox="0 0 582 582" width="582" height="582" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="291" cy="291" r="291" fill="#ECAD7A"/><mask id="a" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M38 294c6.627 0 12 5.373 12 12s-5.373 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12H38zm220 0c6.627 0 12 5.373 12 12s-5.373 12-12 12h-78v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h160c6.627 0 12 5.373 12 12s-5.373 12-12 12H83c-6.627 0-12-5.373-12-12s5.373-12 12-12h49c6.627 0 12-5.373 12-12s-5.373-12-12-12h-30c-6.627 0-12-5.373-12-12s5.373-12 12-12h156zM53 390c6.627 0 12 5.373 12 12s-5.373 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm287 0c6.627 0 12 5.373 12 12s-5.373 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm264 12c0-6.627-5.373-12-12-12H426c-6.627 0-12 5.373-12 12s5.373 12 12 12h166c6.627 0 12-5.373 12-12zm-190-84c6.627 0 12 5.373 12 12s-5.373 12-12 12h-9c-6.627 0-12 5.373-12 12s5.373 12 12 12h257c6.627 0 12-5.373 12-12s-5.373-12-12-12H462v-.01c-6.395-.262-11.5-5.53-11.5-11.99s5.105-11.728 11.5-11.99V318h24c6.627 0 12-5.373 12-12s-5.373-12-12-12H330c-6.627 0-12 5.373-12 12s5.373 12 12 12h84zm298-12c0-6.627-5.373-12-12-12H544c-6.627 0-12 5.373-12 12s5.373 12 12 12h156c6.627 0 12-5.373 12-12z" fill="#F0D29F"/></g><mask id="b" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#b)"><path d="M159 402c0-6.627-5.373-12-12-12h-29c-6.627 0-12-5.373-12-12s5.373-12 12-12h101c6.627 0 12 5.373 12 12s-5.373 12-12 12h-3l-.001.01c-6.395.263-11.499 5.53-11.499 11.99s5.104 11.727 11.499 11.99l.001.01h3c6.627 0 12 5.373 12 12s-5.373 12-12 12h-76c-6.627 0-12-5.373-12-12s5.373-12 12-12h4c6.627 0 12-5.373 12-12z" fill="#D86534"/></g><mask id="c" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#c)"><path fill-rule="evenodd" clip-rule="evenodd" d="M466 54c-6.627 0-12 5.373-12 12s5.373 12 12 12h156c6.627 0 12-5.373 12-12s-5.373-12-12-12H466zm-220 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h78v.01c6.395.262 11.5 5.53 11.5 11.99s-5.105 11.728-11.5 11.99v.01H164c-6.627 0-12 5.373-12 12s5.373 12 12 12h257c6.627 0 12-5.373 12-12s-5.373-12-12-12h-49c-6.627 0-12-5.373-12-12s5.373-12 12-12h30c6.627 0 12-5.373 12-12s-5.373-12-12-12H246zm205 96c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zm-287 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zm-264 12c0-6.627 5.373-12 12-12H78c6.627 0 12 5.373 12 12s-5.373 12-12 12H-88c-6.627 0-12-5.373-12-12zM90 78c-6.627 0-12 5.373-12 12s5.373 12 12 12h9c6.627 0 12 5.373 12 12s-5.373 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12H42v-.01c6.395-.262 11.5-5.53 11.5-11.99S48.395 78.272 42 78.01V78H18c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12H90zm-298-12c0-6.627 5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12h-156c-6.627 0-12-5.373-12-12z" fill="#DC8E61"/></g><mask id="d" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#d)"><path fill-rule="evenodd" clip-rule="evenodd" d="M624 438c-6.627 0-12 5.373-12 12s5.373 12 12 12h156c6.627 0 12-5.373 12-12s-5.373-12-12-12H624zm-220 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h78v.01c6.395.262 11.5 5.53 11.5 11.99s-5.105 11.728-11.5 11.99v.01H322c-6.627 0-12 5.373-12 12s5.373 12 12 12h257c6.627 0 12-5.373 12-12s-5.373-12-12-12h-49c-6.627 0-12-5.373-12-12s5.373-12 12-12h30c6.627 0 12-5.373 12-12s-5.373-12-12-12H404zm205 96c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zm-287 0c-6.627 0-12 5.373-12 12s5.373 12 12 12h73c6.627 0 12-5.373 12-12s-5.373-12-12-12h-73zM58 546c0-6.627 5.373-12 12-12h166c6.627 0 12 5.373 12 12s-5.373 12-12 12H70c-6.627 0-12-5.373-12-12zm190-84c-6.627 0-12 5.373-12 12s5.373 12 12 12h9c6.627 0 12 5.373 12 12s-5.373 12-12 12H0c-6.627 0-12-5.373-12-12s5.373-12 12-12h200v-.01c6.395-.262 11.5-5.53 11.5-11.99s-5.105-11.728-11.5-11.99V462h-24c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12h-84zm-298-12c0-6.627 5.373-12 12-12h156c6.627 0 12 5.373 12 12s-5.373 12-12 12H-38c-6.627 0-12-5.373-12-12z" fill="#D89D6D"/></g><mask id="e" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#e)"><path fill-rule="evenodd" clip-rule="evenodd" d="M177 222c6.627 0 12 5.373 12 12s-5.373 12-12 12h-10c-6.627 0-12 5.373-12 12s5.373 12 12 12h89c6.627 0 12-5.373 12-12s-5.373-12-12-12h-10l-.001-.01c-6.395-.263-11.499-5.53-11.499-11.99s5.104-11.727 11.499-11.99L246 222h65c6.627 0 12-5.373 12-12s-5.373-12-12-12H112c-6.627 0-12 5.373-12 12s5.373 12 12 12h65zm-46 36c0-6.627-5.373-12-12-12H57c-6.627 0-12 5.373-12 12s5.373 12 12 12h62c6.627 0 12-5.373 12-12zM9 246c6.627 0 12 5.373 12 12s-5.373 12-12 12h-28c-6.627 0-12-5.373-12-12s5.373-12 12-12H9zm475 12c0-6.627-5.373-12-12-12H304c-6.627 0-12 5.373-12 12s5.373 12 12 12h168c6.627 0 12-5.373 12-12zm64-12c6.627 0 12 5.373 12 12s-5.373 12-12 12h-28c-6.627 0-12-5.373-12-12s5.373-12 12-12h28zm-35-36c0-6.627-5.373-12-12-12H359c-6.627 0-12 5.373-12 12s5.373 12 12 12h142c6.627 0 12-5.373 12-12zm86-12c6.627 0 12 5.373 12 12s-5.373 12-12 12h-50c-6.627 0-12-5.373-12-12s5.373-12 12-12h50zM52 210c0-6.627-5.373-12-12-12H12c-6.627 0-12 5.373-12 12s5.373 12 12 12h28c6.627 0 12-5.373 12-12z" fill="#D89D6D"/></g><mask id="f" maskUnits="userSpaceOnUse" x="0" y="0" width="582" height="582"><circle cx="291" cy="291" r="291" fill="#fff"/></mask><g mask="url(#f)"><path opacity=".078" fill="#000" d="M291 0h292v582H291z"/></g></svg>
+              </div>
+              <h1>jupiter</h1>
+              <p class="content__text">
+                The best known feature of Jupiter is the Great Red Spot, a persistent 
+  anticyclonic storm located 22° south of the equator. It is known to have 
+  existed since at least 1831, and possibly since 1665.
+              </p>
+              <div class="source">
+                <span class="source__text">Source : </span>
+                <a href="https://en.wikipedia.org/wiki/Jupiter#Great_Red_Spot_and_other_vortices" class="source__link"> Wikipedia </a>
+                <svg class="source__svg" xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path fill="#FFF" d="M11.34.66C10.9.22 10.37 0 9.75 0h-7.5C1.63 0 1.1.22.66.66.22 1.1 0 1.63 0 2.25v7.5c0 .62.22 1.15.66 1.59.44.44.97.66 1.59.66h7.5c.62 0 1.15-.22 1.59-.66.44-.44.66-.97.66-1.59v-7.5c0-.62-.22-1.15-.66-1.59zM10 6.25a.467.467 0 01-.305.46.544.544 0 01-.195.04.465.465 0 01-.352-.149L8.023 5.476 3.852 9.648a.481.481 0 01-.352.149.48.48 0 01-.352-.149l-.796-.797a.48.48 0 01-.149-.351.48.48 0 01.149-.352l4.172-4.172-1.125-1.125c-.162-.15-.198-.333-.11-.546A.467.467 0 015.75 2H9.5c.135 0 .253.05.352.148A.48.48 0 0110 2.5v3.75z" opacity=".5"/></svg>
+              </div>
+          </div>
+          
+          <!--? Surface Geology Content End -->
+
+          <!-- ? Planet info start -->
+          <div class="planet-info">
+            <!-- 1 -->
+            <div class="planet-info__box">
+              <div class="box__name">
+                ROTATION TIME
+              </div>
+              <div class="box__value">
+                9.93 hours
+              </div>
+            </div>
+            <!-- 2 -->
+            <div class="planet-info__box">
+              <div class="box__name">
+                REVOLUTION TIME
+              </div>
+              <div class="box__value">
+                11.86 years
+              </div>
+            </div>
+            <!-- 3 -->
+            <div class="planet-info__box">
+              <div class="box__name">
+                radius
+              </div>
+              <div class="box__value">
+                69,911 km
+              </div>
+            </div>
+            <!-- 4 -->
+            <div class="planet-info__box">
+              <div class="box__name">
+                AVERAGE TEMP.
+              </div>
+              <div class="box__value">
+                -108°c
+              </div>
+            </div>
+          </div>
+          <!-- ? Planet info end -->
+        </div>
+
+  <!-- Overview Content Start -->
+<!-- 
+  Jupiter is the fifth planet from the Sun and the largest in the Solar System. 
+  It is a gas giant with a mass two and a half times that of all the other 
+  planets in the Solar System combined, but less than one-thousandth the mass 
+  of the Sun.
+
+  Source : Wikipedia URL: https://en.wikipedia.org/wiki/Jupiter -->
+
+  <!-- Overview Content End -->
+
+  <!-- Internal Structure Content Start -->
+
+  <!-- When the Juno arrived in 2016, it found that Jupiter has a very diffuse core 
+  that mixes into its mantle. A possible cause is an impact from a planet of 
+  about ten Earth masses a few million years after Jupiter's formation, which 
+  would have disrupted an originally solid Jovian core.
+
+  Source : Wikipedia URL: https://en.wikipedia.org/wiki/Jupiter#Internal_structure -->
+
+  <!-- Internal Structure Content End -->
+
+  <!-- Surface Geology Content Start -->
+
+  <!-- The best known feature of Jupiter is the Great Red Spot, a persistent 
+  anticyclonic storm located 22° south of the equator. It is known to have 
+  existed since at least 1831, and possibly since 1665.
+
+  Source : Wikipedia URL: https://en.wikipedia.org/wiki/Jupiter#Great_Red_Spot_and_other_vortices -->
+
+  <!-- Surface Geology Content End -->
+
+  <script src="index.js"></script>
+</body>
+</html>
