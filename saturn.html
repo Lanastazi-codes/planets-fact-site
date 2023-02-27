@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            :root {
+                --svgWidthHeigth: 256px;
+                --planet: var(--saturn);
+            }
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=League+Spartan:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="stars.css" />
+        <link rel="stylesheet" href="responsive.css" />
+        <style>
+            .planet-menu__surface-pic::before {
+                content: "";
+                position: absolute;
+                width: 60px;
+                height: 80px;
+                background: url("./assets/geology-saturn.png") no-repeat center;
+                background-size: contain;
+                bottom: 20%;
+                left: 45%;
+            }
+
+            .planet-menu__item-dash.active {
+                background-color: var(--saturn);
+            }
+
+            .saturn-link .link__name {
+                color: #fff;
+            }
+
+            @media screen and (min-width: 670px) {
+                .nav__link-opened {
+                    border-bottom: 4px solid var(--saturn);
+                }
+            }
+        </style>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Planets fact site</title>
+    </head>
+    <body>
+        <!--? SVG background -->
+        <svg
+            id="bg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1532"
+            height="1291"
+        >
+            <g fill="#FFF" fill-rule="evenodd" opacity=".202">
+                <circle cx="1155.5" cy="369.5" r="3.5" />
+                <circle cx="1145.5" cy="372.5" r="1.5" />
+                <circle cx="1167.5" cy="329.5" r="1.5" />
+                <circle cx="1148.5" cy="298.5" r="1.5" />
+                <circle cx="1225.5" cy="169.5" r="1.5" />
+                <circle cx="1222" cy="174" r="2" />
+                <circle cx="1199.5" cy="156.5" r="1.5" />
+                <circle cx="1192.5" cy="210.5" r="1.5" />
+                <circle cx="1344" cy="192" r="2" />
+                <circle cx="1336" cy="332" r="2" />
+                <circle cx="1362.5" cy="350.5" r="1.5" />
+                <circle cx="1164.5" cy="57.5" r="2.5" />
+                <circle cx="1237.5" cy="64.5" r="1.5" />
+                <circle cx="1164.5" cy="35.5" r="1.5" />
+                <circle cx="1016.5" cy="76.5" r="1.5" />
+                <circle cx="1017" cy="32" r="2" />
+                <circle cx="966.5" cy="8.5" r="3.5" />
+                <circle cx="957.5" cy="54.5" r="2.5" />
+                <circle cx="860.5" cy="58.5" r="3.5" />
+                <circle cx="921" cy="34" r="2" />
+                <circle cx="965" cy="229" r="2" />
+                <circle cx="934" cy="269" r="2" />
+                <circle cx="885.5" cy="287.5" r="1.5" />
+                <circle cx="874.5" cy="302.5" r="1.5" />
+                <circle cx="963" cy="410" r="4" />
+                <circle cx="852" cy="372" r="2" />
+                <circle cx="805" cy="331" r="2" />
+                <circle cx="812.5" cy="256.5" r="1" />
+                <circle cx="766.5" cy="281.5" r="1.5" />
+                <circle cx="1510" cy="17" r="2" />
+                <circle cx="1516.5" cy="20.5" r="2.5" />
+                <circle cx="1457" cy="200" r="2" />
+                <circle cx="1431.5" cy="75.5" r="1.5" />
+                <circle cx="1420.5" cy="89.5" r="1.5" />
+                <circle cx="1357.5" cy="43.5" r="1" />
+                <circle cx="1310.5" cy="70.5" r="1.5" />
+                <circle cx="805.5" cy="474.5" r="2.5" />
+                <circle cx="1490" cy="409" r="2" />
+                <circle cx="1508.5" cy="356.5" r="1.5" />
+                <circle cx="1072.5" cy="334.5" r="1.5" />
+                <circle cx="1109" cy="417" r="2" />
+                <circle cx="1207" cy="446" r="2" />
+                <circle cx="1266" cy="431" r="2" />
+                <circle cx="1234.5" cy="523.5" r="2.5" />
+                <circle cx="1274" cy="505" r="2" />
+                <circle cx="1403.5" cy="481.5" r="1.5" />
+                <circle cx="1417" cy="525" r="2" />
+                <circle cx="1251" cy="562" r="2" />
+                <circle cx="1326" cy="578" r="2" />
+                <circle cx="1417.5" cy="661.5" r="2.5" />
+                <circle cx="1396" cy="696" r="2" />
+                <circle cx="1427.5" cy="677.5" r="1.5" />
+                <circle cx="1258.5" cy="643.5" r="1.5" />
+                <circle cx="1343.5" cy="758.5" r="2.5" />
+                <circle cx="1498" cy="673" r="2" />
+                <circle cx="1529.5" cy="633.5" r="2.5" />
+                <circle cx="1440.5" cy="575.5" r="1" />
+                <circle cx="1306.5" cy="918.5" r="1.5" />
+                <circle cx="1499" cy="911" r="2" />
+                <circle cx="1467.5" cy="923.5" r="1.5" />
+                <circle cx="1497" cy="1029" r="2" />
+                <circle cx="1432.5" cy="1044.5" r="1.5" />
+                <circle cx="824" cy="34" r="2" />
+                <circle cx="602" cy="140" r="2" />
+                <circle cx="640.5" cy="314.5" r="1.5" />
+                <circle cx="606" cy="365" r="2" />
+                <circle cx="466" cy="8" r="2" />
+                <circle cx="576" cy="8" r="2" />
+                <circle cx="552.5" cy="17.5" r="3.5" />
+                <circle cx="464" cy="61" r="2" />
+                <circle cx="218" cy="78" r="2" />
+                <circle cx="419.5" cy="17.5" r="1.5" />
+                <circle cx="461.5" cy="288.5" r="3.5" />
+                <circle cx="440.5" cy="279.5" r="1.5" />
+                <circle cx="386" cy="332" r="2" />
+                <circle cx="404" cy="342" r="2" />
+                <circle cx="378" cy="270" r="2" />
+                <circle cx="362" cy="365" r="2" />
+                <circle cx="373.5" cy="433.5" r="3.5" />
+                <circle cx="511.5" cy="464.5" r="1.5" />
+                <circle cx="627.5" cy="474.5" r="1.5" />
+                <circle cx="644" cy="492" r="2" />
+                <circle cx="117.5" cy="199.5" r="1.5" />
+                <circle cx="118" cy="207" r="2" />
+                <circle cx="89.5" cy="9.5" r="2.5" />
+                <circle cx="110.5" cy="23.5" r="2.5" />
+                <circle cx="196.5" cy=".5" r="1" />
+                <circle cx="274" cy="12" r="2" />
+                <circle cx="283" cy="60" r="2" />
+                <circle cx="63.5" cy="127.5" r="2.5" />
+                <circle cx="24" cy="60" r="2" />
+                <circle cx="65.5" cy="35.5" r="1" />
+                <circle cx="28" cy="163" r="2" />
+                <circle cx="22.5" cy="204.5" r="2.5" />
+                <circle cx="99" cy="268" r="4" />
+                <circle cx="50.5" cy="228.5" r="1" />
+                <circle cx="37.5" cy="257.5" r="1.5" />
+                <circle cx="85" cy="291" r="2" />
+                <circle cx="11.5" cy="47.5" r="1" />
+                <circle cx="138" cy="426" r="4" />
+                <circle cx="262.5" cy="486.5" r="3.5" />
+                <circle cx="269.5" cy="452.5" r="1.5" />
+                <circle cx="134.5" cy="547.5" r="2.5" />
+                <circle cx="3.5" cy="560.5" r="3.5" />
+                <circle cx="429.5" cy="573.5" r="1.5" />
+                <circle cx="486" cy="564" r="2" />
+                <circle cx="511" cy="597" r="2" />
+                <circle cx="352.5" cy="635.5" r="3.5" />
+                <circle cx="345" cy="709" r="2" />
+                <circle cx="256.5" cy="776.5" r="3.5" />
+                <circle cx="235.5" cy="811.5" r="3.5" />
+                <circle cx="229.5" cy="664.5" r="1.5" />
+                <circle cx="233.5" cy="746.5" r="1.5" />
+                <circle cx="42.5" cy="811.5" r="2.5" />
+                <circle cx="77.5" cy="980.5" r="2.5" />
+                <circle cx="255" cy="938" r="2" />
+                <circle cx="32.5" cy="938.5" r="3.5" />
+                <circle cx="23.5" cy="1086.5" r="1.5" />
+                <circle cx="108.5" cy="1238.5" r="3.5" />
+                <circle cx="159.5" cy="1159.5" r="2.5" />
+                <circle cx="90.5" cy="1192.5" r="1" />
+                <circle cx="300.5" cy="1081.5" r="3.5" />
+                <circle cx="388.5" cy="1154.5" r="3.5" />
+                <circle cx="343" cy="1124" r="2" />
+                <circle cx="467.5" cy="1072.5" r="1.5" />
+                <circle cx="532.5" cy="1146.5" r="2.5" />
+                <circle cx="555.5" cy="1153.5" r="2.5" />
+                <circle cx="546.5" cy="1137.5" r="1" />
+                <circle cx="318" cy="1199" r="4" />
+                <circle cx="301.5" cy="1186.5" r="1.5" />
+                <circle cx="408" cy="1230" r="2" />
+                <circle cx="491.5" cy="1210.5" r="1" />
+                <circle cx="565.5" cy="1178.5" r="1.5" />
+                <circle cx="656.5" cy="1235.5" r="3.5" />
+                <circle cx="709" cy="1285" r="2" />
+                <circle cx="324.5" cy="1289.5" r="1.5" />
+                <circle cx="332.5" cy="1278.5" r="1.5" />
+                <circle cx="819.5" cy="1028.5" r="2.5" />
+                <circle cx="875" cy="1157" r="2" />
+                <circle cx="963.5" cy="1152.5" r="2.5" />
+                <circle cx="962" cy="1145" r="2" />
+                <circle cx="1069.5" cy="1181.5" r="11.5" />
+                <circle cx="1003.5" cy="1152.5" r="2.5" />
+                <circle cx="940.5" cy="1193.5" r="2.5" />
+                <circle cx="907" cy="1068" r="2" />
+                <circle cx="945" cy="925" r="2" />
+                <circle cx="1204" cy="1186" r="2" />
+                <circle cx="691.5" cy="848.5" r="1.5" />
+                <circle cx="831" cy="1013" r="2" />
+                <circle cx="833.5" cy="1082.5" r="2.5" />
+                <circle cx="833" cy="1190" r="2" />
+                <circle cx="1155.5" cy="1022.5" r="3.5" />
+                <circle cx="908" cy="595" r="4" />
+                <circle cx="1012.5" cy="528.5" r="3.5" />
+                <circle cx="992.5" cy="547.5" r="1.5" />
+                <circle cx="577" cy="960" r="2" />
+                <circle cx="599.5" cy="939.5" r="1.5" />
+                <circle cx="446" cy="959" r="2" />
+                <circle cx="868" cy="534" r="2" />
+                <circle cx="683.5" cy="574.5" r="1.5" />
+                <circle cx="694.5" cy="526.5" r="1.5" />
+                <circle cx="462.5" cy="659.5" r="3.5" />
+                <circle cx="458.5" cy="738.5" r="1.5" />
+                <circle cx="587" cy="764" r="2" />
+                <circle cx="602.5" cy="690.5" r="2.5" />
+                <circle cx="529.5" cy="669.5" r="1.5" />
+                <circle cx="900.5" cy="851.5" r="3.5" />
+                <circle cx="926.5" cy="796.5" r="3.5" />
+                <circle cx="816" cy="823" r="2" />
+                <circle cx="1003" cy="672" r="2" />
+            </g>
+        </svg>
+        <div class="menu">
+            <div class="menu__static">
+                <h2>THE PLANETS</h2>
+                <!-- ? Burger -->
+                <div id="burger" class="burger">
+                    <div class="burger__dash"></div>
+                    <div class="burger__dash"></div>
+                    <div class="burger__dash"></div>
+                </div>
+            </div>
+            <!--? Navigation start  -->
+            <nav id="nav" class="nav">
+                <ul class="nav__list">
+                    <!--mercury  -->
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link mercury-link">
+                            <div class="link__wrapper">
+                                <div class="link__mercury link__planet"></div>
+                                <div class="link__name">mercury</div>
+                            </div>
+                            <div class="link__arrow"></div>
+                        </a>
+                    </li>
+                    <!--venus  -->
+                    <li class="nav__item">
+                        <a href="venus.html" class="nav__link venus-link">
+                            <div class="link__wrapper">
+                                <div class="link__venus link__planet"></div>
+                                <div class="link__name">venus</div>
+                            </div>
+                            <div class="link__arrow"></div>
+                        </a>
+                    </li>
+                    <!-- earth -->
+                    <li class="nav__item">
+                        <a href="earth.html" class="nav__link earth-link">
+                            <div class="link__wrapper">
+                                <div class="link__earth link__planet"></div>
+                                <div class="link__name">earth</div>
+                            </div>
+                            <div class="link__arrow"></div>
+                        </a>
+                    </li>
+                    <!--mars  -->
+                    <li class="nav__item">
+                        <a href="mars.html" class="nav__link mars-link">
+                            <div class="link__wrapper">
+                                <div class="link__mars link__planet"></div>
+                                <div class="link__name">mars</div>
+                            </div>
+                            <div class="link__arrow"></div>
+                        </a>
+                    </li>
+                    <!-- jupiter -->
+                    <li class="nav__item">
+                        <a href="jupiter.html" class="nav__link jupiter-link">
+                            <div class="link__wrapper">
+                                <div class="link__jupiter link__planet"></div>
+                                <div class="link__name">jupiter</div>
+                            </div>
+                            <div class="link__arrow"></div>
+                        </a>
+                    </li>
+                    <!-- saturn -->
+                    <li class="nav__item">
+                        <a
+                            href="saturn.html"
+                            class="nav__link nav__link-opened saturn-link"
+                        >
+                            <div class="link__wrapper">
+                                <div class="link__saturn link__planet"></div>
+                                <div class="link__name">saturn</div>
+                            </div>
+                            <div class="link__arrow"></div>
+                        </a>
+                    </li>
+                    <!-- uranus -->
+                    <li class="nav__item">
+                        <a href="uranus.html" class="nav__link uranus-link">
+                            <div class="link__wrapper">
+                                <div class="link__uranus link__planet"></div>
+                                <div class="link__name">uranus</div>
+                            </div>
+                            <div class="link__arrow"></div>
+                        </a>
+                    </li>
+                    <!-- neptune -->
+                    <li class="nav__item">
+                        <a href="neptune.html" class="nav__link neptune-link">
+                            <div class="link__wrapper">
+                                <div class="link__neptune link__planet"></div>
+                                <div class="link__name">neptune</div>
+                            </div>
+                            <div class="link__arrow"></div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!--? Navigation end  -->
+        </div>
+
+        <!-- ?Planet menu start -->
+        <div class="planet-menu">
+            <ul class="planet-menu__list">
+                <li class="planet-menu__item planet-menu__overview active">
+                    OVERVIEW
+                    <div class="planet-menu__item-dash active"></div>
+                </li>
+                <li class="planet-menu__item planet-menu__structure">
+                    Structure
+                    <div class="planet-menu__item-dash"></div>
+                </li>
+                <li class="planet-menu__item planet-menu__surface">
+                    Surface
+                    <div class="planet-menu__item-dash"></div>
+                </li>
+            </ul>
+        </div>
+        <!-- ?Planet menu end -->
+
+        <div class="container">
+            <!--? Overview Content Start -->
+            <div class="overview-content">
+                <div class="planet-menu__pic">
+                    <svg
+                        class="saturn"
+                        viewBox="0 0 668 668"
+                        width="668"
+                        height="668"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M53.285 53.283c.113-.12.228-.24.345-.357 28.705-28.705 177.658 73.709 332.696 228.747 155.038 155.038 257.452 303.991 228.747 332.696-.117.117-.236.232-.357.345l-45.524-45.524c.122-.112.242-.227.359-.344 24.049-24.049-61.757-148.848-191.653-278.745C248.001 160.205 123.202 74.399 99.153 98.448a11.74 11.74 0 00-.344.359L53.285 53.283zm56.563 56.563c22.886-22.886 141.637 58.759 265.238 182.36 123.601 123.601 205.246 242.352 182.36 265.238l-17.143-17.143c.123-.111.242-.226.36-.343 21.14-21.14-54.091-130.647-168.033-244.589-113.942-113.942-223.449-189.173-244.589-168.033-.117.118-.232.238-.343.36l-17.85-17.85z"
+                            fill="#B87D43"
+                        />
+                        <circle cx="334" cy="318" r="208" fill="#FCCB6B" />
+                        <mask
+                            id="a"
+                            maskUnits="userSpaceOnUse"
+                            x="126"
+                            y="110"
+                            width="416"
+                            height="416"
+                        >
+                            <circle cx="334" cy="318" r="208" fill="#fff" />
+                        </mask>
+                        <g mask="url(#a)">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M540.369 518.472c-4.686-4.687-12.284-4.687-16.97 0-4.687 4.686-4.687 12.284 0 16.97l110.308 110.309c4.687 4.686 12.285 4.686 16.971 0s4.686-12.284 0-16.971L540.369 518.472zM384.806 362.908c-4.687-4.686-12.285-4.686-16.971 0s-4.686 12.284 0 16.971l55.154 55.154-.007.007c4.337 4.708 4.222 12.042-.346 16.61-4.568 4.568-11.903 4.683-16.61.346l-.007.008-113.137-113.137c-4.687-4.687-12.284-4.687-16.971 0-4.686 4.686-4.686 12.284 0 16.97l181.727 181.727c4.686 4.686 12.284 4.686 16.97 0 4.687-4.687 4.687-12.285 0-16.971l-34.648-34.648c-4.686-4.687-4.686-12.285 0-16.971s12.284-4.686 16.971 0l21.213 21.213c4.686 4.687 12.284 4.687 16.97 0 4.687-4.686 4.687-12.284 0-16.97L384.806 362.908zm77.074 212.839c-4.686-4.686-12.284-4.686-16.97 0-4.687 4.687-4.687 12.285 0 16.971l51.619 51.619c4.686 4.686 12.284 4.686 16.97 0 4.686-4.687 4.686-12.285 0-16.971l-51.619-51.619zM258.941 372.808c-4.687-4.687-12.285-4.687-16.971 0-4.686 4.686-4.686 12.284 0 16.97l51.619 51.619c4.686 4.686 12.284 4.686 16.97 0 4.687-4.686 4.687-12.284 0-16.971l-51.618-51.618zM63.779 194.617c4.687-4.687 12.284-4.687 16.97 0l117.38 117.379c4.687 4.687 4.687 12.285 0 16.971-4.686 4.686-12.284 4.686-16.97 0l-117.38-117.38c-4.686-4.686-4.686-12.284 0-16.97zm193.747 74.953c-4.686-4.686-12.284-4.686-16.97 0-4.686 4.686-4.686 12.284 0 16.971l6.364 6.364c4.686 4.686 4.686 12.284 0 16.97-4.686 4.686-12.284 4.686-16.971 0L48.223 128.149c-4.687-4.687-4.687-12.285 0-16.971 4.686-4.686 12.284-4.686 16.97 0l141.422 141.421.007-.007c4.707 4.337 12.042 4.222 16.61-.346 4.568-4.568 4.683-11.902.346-16.61l.007-.007-16.97-16.971c-4.687-4.686-4.687-12.284 0-16.97 4.686-4.686 12.284-4.687 16.97 0l110.309 110.308c4.686 4.687 4.686 12.285 0 16.971s-12.284 4.686-16.971 0l-59.397-59.397zM55.294 50.367c4.686-4.686 12.284-4.686 16.97 0l110.309 110.309c4.686 4.686 4.686 12.284 0 16.97-4.686 4.686-12.284 4.686-16.97 0L55.293 67.338c-4.685-4.687-4.685-12.285 0-16.971z"
+                                fill="#ECB55A"
+                            />
+                        </g>
+                        <g>
+                            <mask
+                                id="b"
+                                maskUnits="userSpaceOnUse"
+                                x="126"
+                                y="110"
+                                width="416"
+                                height="416"
+                            >
+                                <circle cx="334" cy="318" r="208" fill="#fff" />
+                            </mask>
+                            <g mask="url(#b)">
+                                <path
+                                    opacity=".078"
+                                    fill="#000"
+                                    d="M334 110h209.089v416H334z"
+                                />
+                            </g>
+                        </g>
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M53.284 53.285c-.12.112-.24.227-.357.345-28.705 28.704 73.709 177.657 228.747 332.695C436.712 541.363 585.665 643.777 614.37 615.072c.117-.117.232-.236.344-.357l-45.523-45.524c-.112.122-.227.242-.344.359-24.05 24.05-148.848-61.756-278.745-191.653S74.399 123.202 98.449 99.152c.117-.117.237-.232.359-.344L53.284 53.285zm56.562 56.562c-22.886 22.886 58.76 141.637 182.361 265.238s242.352 205.247 265.238 182.36l-17.143-17.143c-.112.123-.226.243-.343.36-21.14 21.14-130.647-54.091-244.589-168.033C181.428 258.687 106.197 149.18 127.337 128.04c.117-.117.237-.231.36-.343l-17.851-17.85z"
+                            fill="#B87D43"
+                        />
+                    </svg>
+                </div>
+                <h1 id="heading">saturn</h1>
+                <div id="text-buttons-wrapper" class="text-buttons-wrapper">
+                    <div id="text-wrapper" class="text-wrapper">
+                        <p class="content__text">
+                            Saturn is the sixth planet from the Sun and the
+                            second-largest in the Solar System, after Jupiter.
+                            It is a gas giant with an average radius of about
+                            nine and a half times that of Earth. It only has
+                            one-eighth the average density of Earth.
+                        </p>
+                    </div>
+                    <!-- !Tablet buttons start -->
+                    <div class="planet-menu__tablet" id="planet-menu__tablet">
+                        <ul class="planet-menu__list">
+                            <li
+                                class="planet-menu__item planet-menu__overview active tablet"
+                                id="planet-menu__overview"
+                            >
+                                OVERVIEW
+                                <div
+                                    class="planet-menu__item-dash active"
+                                ></div>
+                            </li>
+                            <li
+                                class="planet-menu__item planet-menu__structure"
+                                id="planet-menu__structure"
+                            >
+                                Structure
+                                <div class="planet-menu__item-dash"></div>
+                            </li>
+                            <li
+                                class="planet-menu__item planet-menu__surface"
+                                id="planet-menu__surface"
+                            >
+                                Surface
+                                <div class="planet-menu__item-dash"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- !Tablet buttons end -->
+                </div>
+                <div id="source" class="source">
+                    <span class="source__text">Source : </span>
+                    <a
+                        href="https://en.wikipedia.org/wiki/Saturn"
+                        class="source__link"
+                    >
+                        Wikipedia
+                    </a>
+                    <svg
+                        class="source__svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                    >
+                        <path
+                            fill="#FFF"
+                            d="M11.34.66C10.9.22 10.37 0 9.75 0h-7.5C1.63 0 1.1.22.66.66.22 1.1 0 1.63 0 2.25v7.5c0 .62.22 1.15.66 1.59.44.44.97.66 1.59.66h7.5c.62 0 1.15-.22 1.59-.66.44-.44.66-.97.66-1.59v-7.5c0-.62-.22-1.15-.66-1.59zM10 6.25a.467.467 0 01-.305.46.544.544 0 01-.195.04.465.465 0 01-.352-.149L8.023 5.476 3.852 9.648a.481.481 0 01-.352.149.48.48 0 01-.352-.149l-.796-.797a.48.48 0 01-.149-.351.48.48 0 01.149-.352l4.172-4.172-1.125-1.125c-.162-.15-.198-.333-.11-.546A.467.467 0 015.75 2H9.5c.135 0 .253.05.352.148A.48.48 0 0110 2.5v3.75z"
+                            opacity=".5"
+                        />
+                    </svg>
+                </div>
+            </div>
+            <!--? Overview Content End -->
+
+            <!--? Internal Structure Content Start -->
+            <div class="structure-content">
+                <div class="planet-menu__pic">
+                    <svg
+                        class="saturn"
+                        viewBox="0 0 668 668"
+                        width="668"
+                        height="668"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M53.286 53.283c.112-.12.227-.24.344-.357 28.705-28.705 177.658 73.709 332.696 228.747 155.038 155.038 257.452 303.991 228.747 332.696-.117.117-.236.232-.357.345l-45.524-45.524c.122-.112.242-.227.359-.344 24.05-24.049-61.756-148.848-191.653-278.745C248.001 160.205 123.203 74.399 99.153 98.448a11.51 11.51 0 00-.344.359L53.286 53.283zm56.562 56.563c22.886-22.886 141.637 58.759 265.238 182.36 123.601 123.601 205.246 242.352 182.36 265.238l-17.143-17.143c.123-.111.243-.226.36-.343 21.14-21.14-54.091-130.647-168.033-244.589-113.942-113.942-223.449-189.173-244.589-168.033a11.66 11.66 0 00-.343.36l-17.85-17.85z"
+                            fill="#B87D43"
+                        />
+                        <circle cx="334" cy="318" r="208" fill="#FCCB6B" />
+                        <mask
+                            id="a"
+                            maskUnits="userSpaceOnUse"
+                            x="126"
+                            y="110"
+                            width="416"
+                            height="416"
+                        >
+                            <circle cx="334" cy="318" r="208" fill="#fff" />
+                        </mask>
+                        <g mask="url(#a)">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M540.369 518.472c-4.686-4.687-12.284-4.687-16.97 0-4.687 4.686-4.687 12.284 0 16.97l110.308 110.309c4.687 4.686 12.285 4.686 16.971 0s4.686-12.284 0-16.971L540.369 518.472zM384.806 362.908c-4.687-4.686-12.285-4.686-16.971 0s-4.686 12.284 0 16.971l55.154 55.154-.007.007c4.337 4.708 4.222 12.042-.346 16.61-4.568 4.568-11.903 4.683-16.61.346l-.007.008-113.137-113.137c-4.687-4.687-12.284-4.687-16.971 0-4.686 4.686-4.686 12.284 0 16.97l181.727 181.727c4.686 4.686 12.284 4.686 16.97 0 4.687-4.687 4.687-12.285 0-16.971l-34.648-34.648c-4.686-4.687-4.686-12.284 0-16.971 4.686-4.686 12.284-4.686 16.971 0l21.213 21.213c4.686 4.687 12.284 4.687 16.97 0 4.687-4.686 4.687-12.284 0-16.97L384.806 362.908zm77.074 212.839c-4.686-4.686-12.284-4.686-16.97 0-4.687 4.687-4.687 12.285 0 16.971l51.619 51.619c4.686 4.686 12.284 4.686 16.97 0 4.686-4.687 4.686-12.285 0-16.971l-51.619-51.619zM258.941 372.808c-4.687-4.687-12.285-4.687-16.971 0-4.686 4.686-4.686 12.284 0 16.97l51.619 51.619c4.686 4.686 12.284 4.686 16.97 0 4.687-4.686 4.687-12.284 0-16.971l-51.618-51.618zM63.779 194.617c4.687-4.687 12.284-4.687 16.97 0l117.38 117.38c4.687 4.686 4.687 12.284 0 16.97-4.686 4.686-12.284 4.686-16.97 0l-117.38-117.38c-4.686-4.686-4.686-12.284 0-16.97zm193.747 74.953c-4.686-4.686-12.284-4.686-16.97 0-4.686 4.686-4.686 12.284 0 16.971l6.364 6.364c4.686 4.686 4.686 12.284 0 16.97-4.686 4.686-12.284 4.686-16.971 0L48.223 128.149c-4.687-4.687-4.687-12.285 0-16.971 4.686-4.686 12.284-4.686 16.97 0L206.615 252.6l.007-.008c4.707 4.337 12.042 4.222 16.61-.346 4.568-4.568 4.683-11.902.346-16.61l.007-.007-16.97-16.971c-4.687-4.686-4.687-12.284 0-16.97 4.686-4.686 12.284-4.686 16.97 0l110.309 110.309c4.686 4.686 4.686 12.284 0 16.97-4.686 4.686-12.284 4.686-16.971 0l-59.397-59.397zM55.294 50.367c4.686-4.686 12.284-4.686 16.97 0l110.309 110.309c4.686 4.686 4.686 12.284 0 16.97-4.686 4.687-12.284 4.687-16.97 0L55.293 67.338c-4.685-4.687-4.685-12.285 0-16.971z"
+                                fill="#ECB55A"
+                            />
+                        </g>
+                        <mask
+                            id="b"
+                            maskUnits="userSpaceOnUse"
+                            x="126"
+                            y="110"
+                            width="416"
+                            height="416"
+                        >
+                            <circle cx="334" cy="318" r="208" fill="#fff" />
+                        </mask>
+                        <g mask="url(#b)">
+                            <path
+                                opacity=".078"
+                                fill="#000"
+                                d="M334 110h209.089v416H334z"
+                            />
+                        </g>
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M334 520c111.562 0 202-90.438 202-202s-90.438-202-202-202v404z"
+                            fill="#9C4925"
+                        />
+                        <mask
+                            id="c"
+                            maskUnits="userSpaceOnUse"
+                            x="334"
+                            y="116"
+                            width="202"
+                            height="404"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M334 520c111.562 0 202-90.438 202-202s-90.438-202-202-202v404z"
+                                fill="#fff"
+                            />
+                        </mask>
+                        <g mask="url(#c)">
+                            <circle cx="335" cy="318" r="114" fill="#E09B7F" />
+                            <circle
+                                cx="334.5"
+                                cy="318.5"
+                                r="34.5"
+                                fill="#FEC"
+                            />
+                        </g>
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M53.284 53.285a14 14 0 00-.357.345c-28.705 28.704 73.709 177.657 228.747 332.695C436.712 541.363 585.665 643.777 614.37 615.072c.117-.117.232-.236.345-.357l-45.524-45.524c-.112.122-.227.242-.344.359-24.049 24.05-148.848-61.756-278.745-191.653C160.206 248 74.4 123.202 98.449 99.152c.118-.117.237-.232.359-.344L53.284 53.285zm56.563 56.562c-22.886 22.886 58.759 141.637 182.36 265.238 123.601 123.601 242.352 205.246 265.238 182.36l-17.143-17.143a9.717 9.717 0 01-.343.36c-21.14 21.14-130.647-54.091-244.589-168.033C181.428 258.687 106.197 149.18 127.337 128.04c.118-.117.237-.231.36-.343l-17.85-17.85z"
+                            fill="#B87D43"
+                        />
+                    </svg>
+                </div>
+                <h1>saturn</h1>
+                <p class="content__text">
+                    Despite consisting mostly of hydrogen and helium, most of
+                    Saturn's mass is not in the gas phase, because hydrogen
+                    becomes a non-ideal liquid when the density is above 0.01
+                    g/cm3, which is reached at a radius containing 99.9% of
+                    Saturn's mass.
+                </p>
+                <div class="source">
+                    <span class="source__text">Source : </span>
+                    <a
+                        href="https://en.wikipedia.org/wiki/Saturn#Internal_structure"
+                        class="source__link"
+                    >
+                        Wikipedia
+                    </a>
+                    <svg
+                        class="source__svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                    >
+                        <path
+                            fill="#FFF"
+                            d="M11.34.66C10.9.22 10.37 0 9.75 0h-7.5C1.63 0 1.1.22.66.66.22 1.1 0 1.63 0 2.25v7.5c0 .62.22 1.15.66 1.59.44.44.97.66 1.59.66h7.5c.62 0 1.15-.22 1.59-.66.44-.44.66-.97.66-1.59v-7.5c0-.62-.22-1.15-.66-1.59zM10 6.25a.467.467 0 01-.305.46.544.544 0 01-.195.04.465.465 0 01-.352-.149L8.023 5.476 3.852 9.648a.481.481 0 01-.352.149.48.48 0 01-.352-.149l-.796-.797a.48.48 0 01-.149-.351.48.48 0 01.149-.352l4.172-4.172-1.125-1.125c-.162-.15-.198-.333-.11-.546A.467.467 0 015.75 2H9.5c.135 0 .253.05.352.148A.48.48 0 0110 2.5v3.75z"
+                            opacity=".5"
+                        />
+                    </svg>
+                </div>
+            </div>
+            <!--? Internal Structure Content End -->
+
+            <!--? Surface Geology Content Start -->
+            <div class="surface-content">
+                <div class="planet-menu__pic planet-menu__surface-pic">
+                    <svg
+                        class="saturn"
+                        viewBox="0 0 668 668"
+                        width="668"
+                        height="668"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M53.285 53.283c.113-.12.228-.24.345-.357 28.705-28.705 177.658 73.709 332.696 228.747 155.038 155.038 257.452 303.991 228.747 332.696-.117.117-.236.232-.357.345l-45.524-45.524c.122-.112.242-.227.359-.344 24.049-24.049-61.757-148.848-191.653-278.745C248.001 160.205 123.202 74.399 99.153 98.448a11.74 11.74 0 00-.344.359L53.285 53.283zm56.563 56.563c22.886-22.886 141.637 58.759 265.238 182.36 123.601 123.601 205.246 242.352 182.36 265.238l-17.143-17.143c.123-.111.242-.226.36-.343 21.14-21.14-54.091-130.647-168.033-244.589-113.942-113.942-223.449-189.173-244.589-168.033-.117.118-.232.238-.343.36l-17.85-17.85z"
+                            fill="#B87D43"
+                        />
+                        <circle cx="334" cy="318" r="208" fill="#FCCB6B" />
+                        <mask
+                            id="a"
+                            maskUnits="userSpaceOnUse"
+                            x="126"
+                            y="110"
+                            width="416"
+                            height="416"
+                        >
+                            <circle cx="334" cy="318" r="208" fill="#fff" />
+                        </mask>
+                        <g mask="url(#a)">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M540.369 518.472c-4.686-4.687-12.284-4.687-16.97 0-4.687 4.686-4.687 12.284 0 16.97l110.308 110.309c4.687 4.686 12.285 4.686 16.971 0s4.686-12.284 0-16.971L540.369 518.472zM384.806 362.908c-4.687-4.686-12.285-4.686-16.971 0s-4.686 12.284 0 16.971l55.154 55.154-.007.007c4.337 4.708 4.222 12.042-.346 16.61-4.568 4.568-11.903 4.683-16.61.346l-.007.008-113.137-113.137c-4.687-4.687-12.284-4.687-16.971 0-4.686 4.686-4.686 12.284 0 16.97l181.727 181.727c4.686 4.686 12.284 4.686 16.97 0 4.687-4.687 4.687-12.285 0-16.971l-34.648-34.648c-4.686-4.687-4.686-12.285 0-16.971s12.284-4.686 16.971 0l21.213 21.213c4.686 4.687 12.284 4.687 16.97 0 4.687-4.686 4.687-12.284 0-16.97L384.806 362.908zm77.074 212.839c-4.686-4.686-12.284-4.686-16.97 0-4.687 4.687-4.687 12.285 0 16.971l51.619 51.619c4.686 4.686 12.284 4.686 16.97 0 4.686-4.687 4.686-12.285 0-16.971l-51.619-51.619zM258.941 372.808c-4.687-4.687-12.285-4.687-16.971 0-4.686 4.686-4.686 12.284 0 16.97l51.619 51.619c4.686 4.686 12.284 4.686 16.97 0 4.687-4.686 4.687-12.284 0-16.971l-51.618-51.618zM63.779 194.617c4.687-4.687 12.284-4.687 16.97 0l117.38 117.379c4.687 4.687 4.687 12.285 0 16.971-4.686 4.686-12.284 4.686-16.97 0l-117.38-117.38c-4.686-4.686-4.686-12.284 0-16.97zm193.747 74.953c-4.686-4.686-12.284-4.686-16.97 0-4.686 4.686-4.686 12.284 0 16.971l6.364 6.364c4.686 4.686 4.686 12.284 0 16.97-4.686 4.686-12.284 4.686-16.971 0L48.223 128.149c-4.687-4.687-4.687-12.285 0-16.971 4.686-4.686 12.284-4.686 16.97 0l141.422 141.421.007-.007c4.707 4.337 12.042 4.222 16.61-.346 4.568-4.568 4.683-11.902.346-16.61l.007-.007-16.97-16.971c-4.687-4.686-4.687-12.284 0-16.97 4.686-4.686 12.284-4.687 16.97 0l110.309 110.308c4.686 4.687 4.686 12.285 0 16.971s-12.284 4.686-16.971 0l-59.397-59.397zM55.294 50.367c4.686-4.686 12.284-4.686 16.97 0l110.309 110.309c4.686 4.686 4.686 12.284 0 16.97-4.686 4.686-12.284 4.686-16.97 0L55.293 67.338c-4.685-4.687-4.685-12.285 0-16.971z"
+                                fill="#ECB55A"
+                            />
+                        </g>
+                        <g>
+                            <mask
+                                id="b"
+                                maskUnits="userSpaceOnUse"
+                                x="126"
+                                y="110"
+                                width="416"
+                                height="416"
+                            >
+                                <circle cx="334" cy="318" r="208" fill="#fff" />
+                            </mask>
+                            <g mask="url(#b)">
+                                <path
+                                    opacity=".078"
+                                    fill="#000"
+                                    d="M334 110h209.089v416H334z"
+                                />
+                            </g>
+                        </g>
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M53.284 53.285c-.12.112-.24.227-.357.345-28.705 28.704 73.709 177.657 228.747 332.695C436.712 541.363 585.665 643.777 614.37 615.072c.117-.117.232-.236.344-.357l-45.523-45.524c-.112.122-.227.242-.344.359-24.05 24.05-148.848-61.756-278.745-191.653S74.399 123.202 98.449 99.152c.117-.117.237-.232.359-.344L53.284 53.285zm56.562 56.562c-22.886 22.886 58.76 141.637 182.361 265.238s242.352 205.247 265.238 182.36l-17.143-17.143c-.112.123-.226.243-.343.36-21.14 21.14-130.647-54.091-244.589-168.033C181.428 258.687 106.197 149.18 127.337 128.04c.117-.117.237-.231.36-.343l-17.851-17.85z"
+                            fill="#B87D43"
+                        />
+                    </svg>
+                </div>
+                <h1>saturn</h1>
+                <p class="content__text">
+                    The outer atmosphere of Saturn contains 96.3% molecular
+                    hydrogen and 3.25% helium by volume. The planet's most
+                    famous feature is its prominent ring system, which is
+                    composed mostly of ice particles with a smaller amount of
+                    rocky debris and dust.
+                </p>
+                <div class="source">
+                    <span class="source__text">Source : </span>
+                    <a
+                        href="https://en.wikipedia.org/wiki/Saturn#Atmosphere"
+                        class="source__link"
+                    >
+                        Wikipedia
+                    </a>
+                    <svg
+                        class="source__svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                    >
+                        <path
+                            fill="#FFF"
+                            d="M11.34.66C10.9.22 10.37 0 9.75 0h-7.5C1.63 0 1.1.22.66.66.22 1.1 0 1.63 0 2.25v7.5c0 .62.22 1.15.66 1.59.44.44.97.66 1.59.66h7.5c.62 0 1.15-.22 1.59-.66.44-.44.66-.97.66-1.59v-7.5c0-.62-.22-1.15-.66-1.59zM10 6.25a.467.467 0 01-.305.46.544.544 0 01-.195.04.465.465 0 01-.352-.149L8.023 5.476 3.852 9.648a.481.481 0 01-.352.149.48.48 0 01-.352-.149l-.796-.797a.48.48 0 01-.149-.351.48.48 0 01.149-.352l4.172-4.172-1.125-1.125c-.162-.15-.198-.333-.11-.546A.467.467 0 015.75 2H9.5c.135 0 .253.05.352.148A.48.48 0 0110 2.5v3.75z"
+                            opacity=".5"
+                        />
+                    </svg>
+                </div>
+            </div>
+
+            <!--? Surface Geology Content End -->
+
+            <!-- ? Planet info start -->
+            <div class="planet-info" id="planet-info">
+                <!-- 1 -->
+                <div class="planet-info__box">
+                    <div class="box__name">ROTATION TIME</div>
+                    <div class="box__value">10.8 hours</div>
+                </div>
+                <!-- 2 -->
+                <div class="planet-info__box">
+                    <div class="box__name">REVOLUTION TIME</div>
+                    <div class="box__value">29.46 years</div>
+                </div>
+                <!-- 3 -->
+                <div class="planet-info__box">
+                    <div class="box__name">radius</div>
+                    <div class="box__value">58,232 km</div>
+                </div>
+                <!-- 4 -->
+                <div class="planet-info__box">
+                    <div class="box__name">AVERAGE TEMP.</div>
+                    <div class="box__value">-138°c</div>
+                </div>
+            </div>
+            <!-- ? Planet info end -->
+        </div>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+            integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="index.js"></script>
+    </body>
+</html>
